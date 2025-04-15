@@ -38,20 +38,5 @@ int main ()
             printf("Rainha: Esquerda \n");
             rainha++;
         }     
-    }
-    
-    
-    
-    
-        
-    
-
-    
-    
-    
-
-        
-
-    
-
+    }   
 }
