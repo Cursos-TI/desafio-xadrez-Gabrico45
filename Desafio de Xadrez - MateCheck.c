@@ -6,10 +6,12 @@ int main ()
     int torre;
     int bispo = 0;
     int escolha;
+    int cavalo = 0;
+    int cavaloBaixo = 0;
     
     printf("        --- Xadrez Virtual --- \n");
     printf("Escolha a peça na qual voce vai movimentar \n");
-    printf("1- Torre\n""2- Bispo\n""3- Rainha\n");
+    printf("1- Torre\n""2- Bispo\n""3- Rainha\n""4- Cavalo\n: ");
     scanf("%d", &escolha);
     
     // Função recursiva para Torre
@@ -39,4 +41,20 @@ int main ()
             rainha++;
         }     
     }   
+ 
+    //Função recursiva para Cavalo
+    for (cavalo = 0; cavalo < 1; cavalo++)
+    {
+        if (escolha == 4)
+        {
+            while (cavaloBaixo < 2)
+            {
+                printf("Baixo\n");
+                cavaloBaixo++;
+                
+            }
+            printf("Esquerda\n");
+        }   return 0;
+    }
+    
 }
