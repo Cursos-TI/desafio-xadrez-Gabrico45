@@ -1,60 +1,82 @@
 #include <stdio.h>
 
+//funcão recursiva da torre
+void torre(int casas)
+{
+    if (casas > 0) 
+    {
+        printf("Direita\n");
+        torre(casas - 1);
+    }
+}
+
+//funcão recursiva do bispo
+void bispo(int casas)
+{
+    if (casas > 0) 
+    {
+        printf("Cima e Direita\n");
+        bispo(casas - 1);
+    }
+}
+
+//funcão recursiva da rainha
+void rainha(int casas)
+{
+    if (casas > 0) 
+    {
+        printf("Esquerda\n");
+        rainha(casas - 1);
+    }
+}
+
+//funcão recursiva do cavalo
+void cavalo()
+{
+    int i, j;
+    for(i = 0; i < 2; i++)
+    {
+        printf("Cima\n");
+    }
+    for(j = 0; j < 1; j++)
+    {
+        printf("Direita\n");
+    }
+}
+
+//menu e escolha do usuario.
 int main ()
 {
-    int rainha = 0;
-    int torre;
-    int bispo = 0;
     int escolha;
-    int cavalo = 0;
-    int cavaloBaixo = 0;
     
     printf("        --- Xadrez Virtual --- \n");
     printf("Escolha a peça na qual voce vai movimentar \n");
     printf("1- Torre\n""2- Bispo\n""3- Rainha\n""4- Cavalo\n: ");
     scanf("%d", &escolha);
     
-    // Função recursiva para Torre
-    for (torre = 0; torre < 5; torre++)
+    //switch para decidir o numero e chamar o void que era inexistente.
+    switch(escolha)
     {
-        if (escolha == 1)
-        {
-            printf("Torre: Direita\n");
-            
-        }  
-    } 
-    // Função recursiva para  Bispo
-    if (escolha == 2)
-    {
-        do {
-            printf("Bispo: Cima, Direita\n"); 
-            bispo++; 
-        } while 
-            (bispo < 5);
+        case 1:
+        torre(5);
+        break;
+
+        case 2:
+        bispo(5);
+        break;
+
+        case 3:
+        rainha(8);
+        break;
+
+        case 4:
+        cavalo(3);
+        break;
+
+        default: printf("opção não existe!\n");
+        break;
+
+
     }
-    // Função recursiva Rainha
-    if (escolha == 3)
-    {
-        while (rainha < 8)
-        {
-            printf("Rainha: Esquerda \n");
-            rainha++;
-        }     
-    }   
- 
-    //Função recursiva para Cavalo
-    for (cavalo = 0; cavalo < 1; cavalo++)
-    {
-        if (escolha == 4)
-        {
-            while (cavaloBaixo < 2)
-            {
-                printf("Baixo\n");
-                cavaloBaixo++;
-                
-            }
-            printf("Esquerda\n");
-        }   return 0;
-    }
-    
+    return 0;
 }
